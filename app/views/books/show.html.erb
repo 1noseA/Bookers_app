@@ -5,6 +5,11 @@
   	<%= @book.title %></h4>
   	<h4>Body
   	<%= @book.body %></h4>
+
+  	<p class = "single-text">
+  		<%= @book.body %></p>
+    <%= link_to "Show",show_book_path(@book) %>
+    <%= link_to "Edit",edit_book_path(@book) %>
   </div>
 </main>
 
