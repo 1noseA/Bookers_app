@@ -1,17 +1,17 @@
 <header>Books</header>
 <main class="clearfix">
-  <div class = "book-box">
-  	<h4>Title
-  	<%= @book.title %></h4>
-  	<h4>Body
-  	<%= @book.body %></h4>
+  <%= @books.each do |book| %>
+  	<p>Title</p>
+  	<span><%= @book.title %></span>
+  	<p>Body</p>
+  	<span><%= @book.body %></span>
+  <% end %>
 
   	<p class = "single-text">
   		<%= @book.body %></p>
     <%= link_to "Show",show_book_path(@book) %>
     <%= link_to "Edit",edit_book_path(@book) %>
     <%= link_to "Destroy",book_path(@book),method: :delete %>
-  </div>
 </main>
 
 <h1>New book</h1>
