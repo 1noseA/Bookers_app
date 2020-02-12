@@ -1,34 +1,10 @@
-<h1>Books</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-  </tr>
-  <tr>
-  <%= @books.each do |book| %>
-  <td><%= @book.title %></td>
-  <td><%= @book.body %></td>
-  <% end %>
-  </tr>
+<h3>title</h3>
+  <%= @book.title %>
+<h3>body</h3>
+  <%= @book.body %>
 
-  	<p class = "single-text">
-  	<%= @book.body %></p>
-    <%= link_to "Show",show_book_path(@book) %>
-    <%= link_to "Edit",edit_book_path(@book) %>
-    <%= link_to "Destroy",book_path(@book),method: :delete %>
-</table>
+  <%= link_to "Edit",edit_book_path(@book) %>
+  <%= link_to "Back",books_path(@book) %>
 
-<h3>New book</h3>
 
-<%= form_for(@book) do |f| %>
-<%= render 'layouts/error_messages', model: f.object %>
 
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-
-  <h4>Body</h4>
-  <%= f.text_area :body %>
-
-  <%= f.submit 'Create Book' %>
-
-<% end %>

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :books
 
   root 'books#index'
+
+  post 'books' => 'books#create'
 end

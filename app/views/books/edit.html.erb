@@ -3,6 +3,9 @@
 	<h4>Title</h4>
 	<%= f.text_field :title %>
 	<h4>Body</h4>
-	<%= f.submit 'show' %>
-	<%= f.submit 'back' %>
+	<%= f.text_area :body %>
+	<%= f.submit 'Update Book' %>
+
+	<%= link_to "Show",book_path(@book) %>
+    <%= link_to "Back",books_path(@book) %>
 <% end %>
