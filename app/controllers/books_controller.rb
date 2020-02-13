@@ -22,21 +22,24 @@ class BooksController < ApplicationController
 
   def update
   	book = Book.find(params[:id])
-  	book.update
-    redirect_to book_path,notice:'Book was successfully updated.'
+  	book.update(book_params)
+    flash[:notice] = "Book was successfully updated."
+    redirect_to book_path(book.id)
   end
 
   def destroy
   	book = Book.find(params[:id])
   	book.destroy
-    redirect_to book_path,notice:'Book was successfully destroyed.'
+    flash[:notice] = "Book was successfully destroyed."
+    redirect_to books_path
   end
 
   def create
   	book = Book.new(book_params)
-  	if book.save
-  	redirect_to book_path,notice:'Book was successfully created.'
-    else render 'index'
+  	if book.save(book_params)
+    flash[:notice] = "Book was successfully created."
+  	redirect_to book_path(book.id)
+    else render index
     end
   end
 
