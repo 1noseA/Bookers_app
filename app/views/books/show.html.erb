@@ -1,7 +1,5 @@
-<h3>title</h3>
-  <%= @book.title %>
-<h3>body</h3>
-  <%= @book.body %>
+<p class = "show-title">Title:<%= @book.title %></p>
+<p class = "show-body">Body:<%= @book.body %></p>
 
   <%= link_to "Edit",edit_book_path(@book) %>
   <%= link_to "Back",books_path %>
