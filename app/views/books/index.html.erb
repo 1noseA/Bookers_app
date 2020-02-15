@@ -1,8 +1,8 @@
 <h1>Books</h1>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Body</th>
+    <th><div class = "t1">Title</div></th>
+    <th><div class = "t2">Body</div></th>
   </tr>
 
   <% @books.each do |book| %>
@@ -21,7 +21,7 @@
 
 <h3>New book</h3>
 <% if @book.errors.any? %>
-  <div class = "alert alert-warning">
+  <div class = "alert-warning">
     <ul><% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
